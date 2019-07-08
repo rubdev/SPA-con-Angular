@@ -1,1 +1,11 @@
-<p>heroes works!</p>
+<div class="card-columns animated fadeIn">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+        <img [src]="heroe.img" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted"><b>1ª Aparición:</b> {{ heroe.aparicion }}</small></p>
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="verHeroe(i)">Ver más</button>
+        </div>
+    </div>
+</div>

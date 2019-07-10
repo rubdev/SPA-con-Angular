@@ -8,7 +8,7 @@ import { HeroesService, Heroe } from 'src/app/services/heroes.service';
   templateUrl: './heroe.component.html',
   styleUrls: ['./heroe.component.css']
 })
-export class HeroeComponent implements OnInit {
+export class HeroeComponent {
 
   heroe: Heroe;
 

@@ -67,6 +67,24 @@ export class HeroesService {
         return this.heroes[id];
     }
 
+    /**
+     * Devuelve un array con los heroes que coincidan en la búsqueda
+     * @param busqueda
+     */
+    buscarHeroes( busqueda: string ) {
+      let heroesCoincidencias: Heroe[];
+      let nombre: string;
+      busqueda = busqueda.toLocaleLowerCase();
+      for (const heroe of this.heroes) {
+        nombre = heroe.nombre.toLocaleLowerCase();
+        // INDEX OF busca coincidencias en el string y devuelve 1 si las hay
+        if  (nombre.indexOf(busqueda) > 0 ) {
+          heroesCoincidencias.push(heroe);
+        }
+      }
+      return heroesCoincidencias;
+    }
+
 }
 
 export interface Heroe {

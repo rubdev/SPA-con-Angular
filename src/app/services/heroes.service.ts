@@ -71,14 +71,16 @@ export class HeroesService {
      * Devuelve un array con los heroes que coincidan en la búsqueda
      * @param busqueda
      */
-    buscarHeroes( busqueda: string ) {
+    buscarHeroes( busqueda: string ): Heroe[] {
       let heroesCoincidencias: Heroe[];
       let nombre: string;
+      console.log('En el servicio: ' + busqueda);
       busqueda = busqueda.toLowerCase();
       for (const heroe of this.heroes) {
         nombre = heroe.nombre.toLowerCase();
         // INDEX OF busca coincidencias en el string y devuelve 1 si las hay
-        if  (nombre.indexOf(busqueda) > 0 ) {
+        if  (nombre.indexOf(busqueda) >= 0 ) {
+          console.log('coincidencia: ' + heroe.nombre);
           heroesCoincidencias.push(heroe);
         }
       }

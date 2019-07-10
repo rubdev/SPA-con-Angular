@@ -74,9 +74,9 @@ export class HeroesService {
     buscarHeroes( busqueda: string ) {
       let heroesCoincidencias: Heroe[];
       let nombre: string;
-      busqueda = busqueda.toLocaleLowerCase();
+      busqueda = busqueda.toLowerCase();
       for (const heroe of this.heroes) {
-        nombre = heroe.nombre.toLocaleLowerCase();
+        nombre = heroe.nombre.toLowerCase();
         // INDEX OF busca coincidencias en el string y devuelve 1 si las hay
         if  (nombre.indexOf(busqueda) > 0 ) {
           heroesCoincidencias.push(heroe);
